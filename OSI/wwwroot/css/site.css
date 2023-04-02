@@ -1,0 +1,47 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+@font-face {
+    font-family: "OSIFont";
+    src: url("../resources/font.otf");
+}
+@font-face {
+    font-family: "VUKIntFont";
+    src: url("../resources/vukintfont.otf");
+}
+@font-face {
+    font-family: "MainFont";
+    src: url("../resources/MainFont.ttf");
+}
+#mainHeaderOSI {
+    background-image: url('../resources/background.png');
+    color: white;
+    text-shadow: 2px 2px 6px black;
+    background-size:cover;
+}
+nav {
+    background-image: url('../resources/background.png');
+    color: white;
+    text-shadow: 2px 2px 6px black;
+    background-size: cover;
+
+}
+#MainHeaderNav {
+    backdrop-filter: blur(10px);
+}

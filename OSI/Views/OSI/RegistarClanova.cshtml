@@ -1,0 +1,47 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Clanovi[] clanoviView = ViewBag.Clanovi;
+    ViewData["Title"] = "Registar Članova";
+}
+<h1>Registar članova</h1>
+
+<h4>OBJEDINJENA SERVERSKA INFRASTRUKTURA</h4>
+<br />
+<div class="btn-group btn-group-toggle" data-toggle="buttons">
+  <label class="btn btn-primary" onclick="location.href = '/'">
+        Nazad
+  </label>
+  <label class="btn btn-primary" onclick="VukintoshPrint('printSegment', '<h1>Tabelarni prikaz članova biblioteke u Ranilugu</h1><h4>OSI</h4><hr />')">
+     Odštampaj
+  </label>
+</div>
+<hr />
+<div id="printSegment">
+<table class="table table-hover table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Ime</th>
+      <th scope="col">Prezime</th>
+      <th scope="col">Mesto</th>
+      <th scope="col">Datum rođenja</th>
+      <th scope="col">Evidencija</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (Clanovi clan in clanoviView)
+    {
+        <tr style="cursor: pointer;" onclick="location.href = '/uredi-clana/@clan.Id'">
+          <td style="font-family: VUKIntFont;" scope="row">@clan.Id</td>
+          <td>@clan.Ime</td>
+          <td>@clan.Prezime</td>
+          <td>@clan.Mesto</td>
+          <td>@clan.DatumRodjenja</td>
+          <td>@clan.Evidencija</td>
+        </tr>
+    }
+  </tbody>
+</table>
+</div>

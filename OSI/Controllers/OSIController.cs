@@ -116,7 +116,12 @@ namespace OSI.Controllers
         [HttpPost("/napravi/knjiga")]
         public ActionResult NapraviK(Knjige knjiga)
         {
-            context.Knjige.Add(knjiga);
+            Knjige knjigaToAdd = knjiga;
+            DateTime lokalnoVreme = DateTime.Now;
+            TimeZoneInfo cestZona = TimeZoneInfo.FindSystemTimeZoneById("Central European Standard Time");
+            DateTime cestVreme = TimeZoneInfo.ConvertTime(lokalnoVreme, TimeZoneInfo.Local, cestZona);
+            knjigaToAdd.DatumUnosa = cestVreme;
+            context.Knjige.Add(knjigaToAdd);
             context.SaveChanges();
             return Redirect("/osi/registar-knjiga");
         }
@@ -216,6 +221,11 @@ namespace OSI.Controllers
         [HttpPost("/uredik")]
         public ActionResult UrediK(Knjige knjiga)
         {
+            Knjige knjigaToEdit = knjiga;
+            DateTime lokalnoVreme = DateTime.Now;
+            TimeZoneInfo cestZona = TimeZoneInfo.FindSystemTimeZoneById("Central European Standard Time");
+            DateTime cestVreme = TimeZoneInfo.ConvertTime(lokalnoVreme, TimeZoneInfo.Local, cestZona);
+            knjigaToEdit.DatumUnosa = cestVreme;
             context.Knjige.Update(knjiga);
             context.SaveChanges();
             return Redirect("/osi/registar-knjiga");

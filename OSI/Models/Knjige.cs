@@ -16,4 +16,6 @@ public partial class Knjige
     public string? Status { get; set; }
 
     public string? Signatura { get; set; }
+
+    public DateTime? DatumUnosa { get; set; }
 }

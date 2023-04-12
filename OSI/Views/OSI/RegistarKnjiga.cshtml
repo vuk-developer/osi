@@ -28,6 +28,7 @@
       <th scope="col">Signatura</th>
       <th scope="col">Naslov</th>
       <th scope="col">Autor</th>
+      <th scope="col">Datum Unosa</th>
       <th scope="col">Status</th>
     </tr>
   </thead>
@@ -41,6 +42,7 @@
           <td>@knjiga.Signatura</td>
           <td>@knjiga.ImeKnjige</td>
           <td>@knjiga.Autor</td>
+          <td>@knjiga.DatumUnosa</td>
           @if(knjiga.Status == "Nije na stanju")
           {
             <td style="text-align: center; color: white; background-color: red;"><strong>@knjiga.Status</strong></td>

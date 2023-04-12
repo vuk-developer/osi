@@ -71,24 +71,25 @@ public partial class OSIContext : DbContext
 
             entity.Property(e => e.Autor)
                 .HasMaxLength(50)
-                .IsUnicode(false)
+                .IsUnicode(true)
                 .HasColumnName("autor");
             entity.Property(e => e.ImeKnjige)
-                .HasMaxLength(50)
-                .IsUnicode(false)
+                .HasMaxLength(250)
+                .IsUnicode(true)
                 .HasColumnName("ime_knjige");
             entity.Property(e => e.Isbn)
                 .HasMaxLength(50)
-                .IsUnicode(false)
+                .IsUnicode(true)
                 .HasColumnName("isbn");
             entity.Property(e => e.Status)
                 .HasMaxLength(50)
-                .IsUnicode(false)
+                .IsUnicode(true)
                 .HasColumnName("status");
             entity.Property(e => e.Signatura)
                 .HasMaxLength(50)
-                .IsUnicode(false)
+                .IsUnicode(true)
                 .HasColumnName("signatura");
+            entity.Property(e => e.DatumUnosa).HasColumnName("datum_unosa");
         });
 
         OnModelCreatingPartial(modelBuilder);

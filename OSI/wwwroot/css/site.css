@@ -45,3 +45,8 @@ nav {
 #MainHeaderNav {
     backdrop-filter: blur(10px);
 }
+#coreId {
+    background-image: url('../resources/img.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}

@@ -20,7 +20,11 @@ namespace OSI.Controllers
         {
             return View();
         }
-
+        [Route("/osi/coreid")]
+        public ActionResult Login()
+        {
+            return Redirect("/Identity/Account/Login");
+        }
         [Route("/osi/clan")]
         public ActionResult CreateClan()
         {

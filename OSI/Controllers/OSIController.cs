@@ -214,7 +214,7 @@ namespace OSI.Controllers
                 }
                 context.Clanovi.Update(clan);
                 context.SaveChanges();
-                return Redirect("/osi/registar-clanova");
+                return Redirect("/osi/registar-knjiga");
             }
             catch (Exception e)
             {

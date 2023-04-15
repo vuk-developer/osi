@@ -23,10 +23,10 @@
 
 <h4>OBJEDINJENA SERVERSKA INFRASTRUKTURA</h4>
 <div class="btn-group btn-group-toggle" data-toggle="buttons">
-  <label class="btn btn-primary" onclick="location.href = '/'">
+  <label class="btn btn-main" onclick="location.href = '/'">
      Nazad
   </label>
-  <label class="btn btn-primary" onclick="VukintoshPrint('printKarte', '<h1>Ispis svih članskih karata</h1><h4>OSI</h4><hr />')">
+  <label class="btn btn-main" onclick="VukintoshPrint('printKarte', '<h1>Ispis svih članskih karata</h1><h4>OSI</h4><hr />')">
      Odštampaj
   </label>
 </div>
@@ -46,13 +46,12 @@
 
         string svg = reader.ReadToEnd();
         svgFinal = svg;
-        Console.WriteLine(svg);
     }
         <div style="border: 2px solid black; margin-right:400px; text-align: center;">
             <div style="margin-top: 20px; margin-left: 20px; margin-bottom: 20px;">
-                <h2 class="d-inline-flex" style="font-family: OSIFont; align-self: center;">OSI</h2><br />
+                <h2 class="d-inline-flex" style="font-family: OSIFont; align-self: center; color: #0066cd;">OSI</h2><br />
                 <h2 class="d-inline-flex" style="font-family: VUKIntFont" >BIBLIOTEKA RANILUG</h2>
-                <h3><strong style="font-family: VUKIntFont">@clan.Id</strong></h3>
+                <h3><strong style="font-family: VUKIntFont; background-color: lightgray; border-radius: 3px;">@clan.Id</strong></h3>
                 <h4 style="font-family: VUKIntFont">@clan.Prezime @clan.Ime</h4>
                 <div style="align-self: center;" style="width: 300px; height: auto;">
                     @Html.Raw(svgFinal)

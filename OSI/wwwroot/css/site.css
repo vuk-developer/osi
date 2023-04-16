@@ -108,3 +108,10 @@ label.button.btn-danger-main:hover {
     justify-items: center;
     align-content: center;
 }
+
+#sajdbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}

@@ -1,13 +1,28 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using OSI.Areas.Identity.Data;
 using OSI.Models;
+using System.Diagnostics;
+using System.Security.Claims;
+using System.Text.RegularExpressions;
+using Wangkanai.Detection.Models;
+using Wangkanai.Detection.Services;
 
 namespace OSI.Controllers
 {
     [Authorize]
     public class OSIController : Controller
     {
+        public static string deviceTypeTelem = string.Empty;
+
+        public OSIController(IDeviceService deviceService)
+        {
+
+            deviceTypeTelem = deviceService.Type.ToString();
+            
+        }
         OSIContext context = new OSIContext();
         // GET: OSIController
         public ActionResult Index()
@@ -20,19 +35,21 @@ namespace OSI.Controllers
         {
             return View();
         }
-        [Route("/osi/coreid")]
+        /*[Route("/osi/coreid")]
         public ActionResult Login()
         {
             return Redirect("/Identity/Account/Login");
-        }
+        }*/
         [Route("/osi/clan")]
         public ActionResult CreateClan()
         {
+            ViewBag.Uredjaj = deviceTypeTelem;
             return View();
         }
         [Route("/osi/clanske-karte")]
         public ActionResult ClanskeKarte()
         {
+            ViewBag.Uredjaj = deviceTypeTelem;
             Clanovi[] clanovi = context.Clanovi.ToArray();
             ViewBag.ClanoviTransport = clanovi;
             return View();
@@ -40,11 +57,13 @@ namespace OSI.Controllers
         [Route("/osi/knjiga")]
         public ActionResult CreateKnjiga()
         {
+            ViewBag.Uredjaj = deviceTypeTelem;
             return View();
         }
         [Route("/osi/registar-clanova")]
         public ActionResult RegistarClanova()
         {
+            ViewBag.Uredjaj = deviceTypeTelem;
             Clanovi[] clanovi = context.Clanovi.ToArray();
             ViewBag.Clanovi = clanovi;
             return View();
@@ -58,6 +77,7 @@ namespace OSI.Controllers
         [Route("/osi/knjige-lokator-form")]
         public ActionResult KnjigeLokatorForm()
         {
+            ViewBag.Uredjaj = deviceTypeTelem;
             List<Knjige> knjige = context.Knjige.ToList();
             ViewBag.Knjige = knjige;
             return View();
@@ -66,6 +86,7 @@ namespace OSI.Controllers
         [Route("/osi/registar-knjiga")]
         public ActionResult RegistarKnjiga()
         {
+            ViewBag.Uredjaj = deviceTypeTelem;
             Knjige[] knjiges1 = context.Knjige.ToArray();
             Clanovi[] clanovis = context.Clanovi.ToArray();
             List<string> knjigeZaOdmrz = new List<string>();
@@ -139,6 +160,7 @@ namespace OSI.Controllers
         [HttpGet("/uredi-clana/{Id}")]
         public async Task<IActionResult> UrediClana(string Id)
         {
+            ViewBag.Uredjaj = deviceTypeTelem;
             Clanovi clan = await context.Clanovi.FindAsync(Id);
             List<Knjige> knjige = new List<Knjige>();
             if (clan.Evidencija != null)
@@ -175,6 +197,7 @@ namespace OSI.Controllers
         [HttpGet("/uredi-knjigu/{Id}")]
         public async Task<IActionResult> UrediKnjigu(int Id)
         {
+            ViewBag.Uredjaj = deviceTypeTelem;
             Knjige knjiga = await context.Knjige.FindAsync(Id);
             ViewBag.KnjigaTransfer = knjiga;
             return View();
@@ -290,5 +313,6 @@ namespace OSI.Controllers
                 return View();
             }
         }
+
     }
 }

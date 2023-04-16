@@ -9,6 +9,7 @@ using OSI.Identitet;
 using OSI.Areas.Identity.Data;
 using OSI;
 using OSI.Models;
+using Wangkanai.Detection.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("OSIdentitetContextConnection") ?? throw new InvalidOperationException("Connection string 'OSIdentitetContextConnection' not found.");
@@ -30,7 +31,14 @@ builder.Services.AddControllersWithViews(options =>
 
 });
 builder.Services.AddRazorPages();
-
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddDetection();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromSeconds(10);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -45,10 +53,15 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
+app.UseDetection();
 app.UseRouting();
 
+app.UseSession();
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.UseEndpoints(endpoints => endpoints.MapDefaultControllerRoute());
+
 
 app.MapControllerRoute(
     name: "default",

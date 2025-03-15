@@ -3,7 +3,7 @@
 
 **Objedinjena Serverska Infrastruktura** (OSI) je MS-RSL licencirani softver namenjen administraciji biblioteka. Omogućava efikasno upravljanje članovima, knjigama i javnim podacima kroz više specijalizovanih podsistema.
 
-<sub>_OSI je razvijen u okviru institucionalne strategije digitalizacije bibliotečkih resursa na teritoriji Opštine Ranilug aprila 2023., s ciljem unapređenja efikasnosti u upravljanju bibliotečkom građom i članstvom. U fazi testiranja, sistem je demonstrirao punu funkcionalnost kroz unos i obradu podataka u bibliotečkoj bazi. Međutim, nakon evidentiranja 70 unosa, nadležni organi lokalne samouprave sproveli su procenu kapaciteta i doneli odluku o obustavi daljeg sprovođenja projekta, uz obrazloženje da postojeći ljudski resursi i institucionalni kapaciteti nisu adekvatni za kontinuiranu primenu i održavanje sistema u predviđenom obimu. Projekat je ostao u mom vlasništvu i ubrzo nakon toga je arhviran._</sub>
+_OSI je razvijen u okviru institucionalne strategije digitalizacije bibliotečkih resursa na teritoriji Opštine Ranilug aprila 2023., s ciljem unapređenja efikasnosti u upravljanju bibliotečkom građom i članstvom. U fazi testiranja, sistem je demonstrirao punu funkcionalnost kroz unos i obradu podataka u bibliotečkoj bazi. Međutim, nakon evidentiranja 70 unosa, nadležni organi lokalne samouprave sproveli su procenu kapaciteta i doneli odluku o obustavi daljeg sprovođenja projekta, uz obrazloženje da postojeći ljudski resursi i institucionalni kapaciteti nisu adekvatni za kontinuiranu primenu i održavanje sistema u predviđenom obimu. Projekat je ostao u mom vlasništvu i ubrzo nakon toga je arhviran._
 
 ## Ključne funkcionalnosti
 

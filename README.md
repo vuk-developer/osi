@@ -1,3 +1,4 @@
+![logo](https://github.com/vukintoshalpha/OSI/blob/master/OSI/wwwroot/resources/logo-full-demo.svg?raw=true)
 # Objedinjena Serverska Infrastruktura
 
 **Objedinjena Serverska Infrastruktura** (OSI) je MS-RSL licencirani softver namenjen administraciji biblioteka. Omogućava efikasno upravljanje članovima, knjigama i javnim podacima kroz više specijalizovanih podsistema.

@@ -31,6 +31,6 @@ Doprinos razvoju OSI-a nije moguć zbog ograničenja MS-RSL licence. Ova licenca
 
 Zbog ovih ograničenja, svi zahtevi za izmenama ili doprinosima moraju biti razmotreni unutar zvaničnog razvojnog tima.
 
-------------
+---
 AI-Generated
-------------
+---

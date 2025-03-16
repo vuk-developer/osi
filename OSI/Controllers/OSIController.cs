@@ -43,12 +43,14 @@ namespace OSI.Controllers
         [Route("/osi/clan")]
         public ActionResult CreateClan()
         {
+            ViewBag.Kontrol = "8";
             ViewBag.Uredjaj = deviceTypeTelem;
             return View();
         }
         [Route("/osi/clanske-karte")]
         public ActionResult ClanskeKarte()
         {
+            ViewBag.Kontrol = "1";
             ViewBag.Uredjaj = deviceTypeTelem;
             Clanovi[] clanovi = context.Clanovi.ToArray();
             ViewBag.ClanoviTransport = clanovi;
@@ -57,12 +59,14 @@ namespace OSI.Controllers
         [Route("/osi/knjiga")]
         public ActionResult CreateKnjiga()
         {
+            ViewBag.Kontrol = "2";
             ViewBag.Uredjaj = deviceTypeTelem;
             return View();
         }
         [Route("/osi/registar-clanova")]
         public ActionResult RegistarClanova()
         {
+            ViewBag.Kontrol = "3";
             ViewBag.Uredjaj = deviceTypeTelem;
             Clanovi[] clanovi = context.Clanovi.ToArray();
             ViewBag.Clanovi = clanovi;
@@ -71,12 +75,14 @@ namespace OSI.Controllers
         [Route("/osi/nepostojeca-knjiga")]
         public ActionResult NepostojecaKnjiga()
         {
+            ViewBag.Kontrol = "4";
             return View();
         }
 
         [Route("/osi/knjige-lokator-form")]
         public ActionResult KnjigeLokatorForm()
         {
+            ViewBag.Kontrol = "5";
             ViewBag.Uredjaj = deviceTypeTelem;
             List<Knjige> knjige = context.Knjige.ToList();
             ViewBag.Knjige = knjige;
@@ -86,6 +92,7 @@ namespace OSI.Controllers
         [Route("/osi/registar-knjiga")]
         public ActionResult RegistarKnjiga()
         {
+            ViewBag.Kontrol = "6";
             ViewBag.Uredjaj = deviceTypeTelem;
             Knjige[] knjiges1 = context.Knjige.ToArray();
             Clanovi[] clanovis = context.Clanovi.ToArray();
@@ -141,6 +148,7 @@ namespace OSI.Controllers
         [HttpPost("/napravi/knjiga")]
         public ActionResult NapraviK(Knjige knjiga)
         {
+            ViewBag.Kontrol = "7";
             Knjige knjigaToAdd = knjiga;
             DateTime lokalnoVreme = DateTime.Now;
             TimeZoneInfo cestZona = TimeZoneInfo.FindSystemTimeZoneById("Central European Standard Time");
@@ -153,6 +161,7 @@ namespace OSI.Controllers
         [HttpPost("/napravi/clan")]
         public ActionResult NapraviC(Clanovi clan)
         {
+            ViewBag.Kontrol = "8";
             context.Clanovi.Add(clan);
             context.SaveChanges();
             return Redirect("/osi/registar-clanova");
@@ -160,6 +169,7 @@ namespace OSI.Controllers
         [HttpGet("/uredi-clana/{Id}")]
         public async Task<IActionResult> UrediClana(string Id)
         {
+            ViewBag.Kontrol = "9";
             ViewBag.Uredjaj = deviceTypeTelem;
             Clanovi clan = await context.Clanovi.FindAsync(Id);
             List<Knjige> knjige = new List<Knjige>();
@@ -181,6 +191,7 @@ namespace OSI.Controllers
         [HttpGet("/osi/obrisi-clana/{Id}")]
         public async Task<IActionResult> ObrisiClana(string Id)
         {
+            ViewBag.Kontrol = "10";
             Clanovi clan = await context.Clanovi.FindAsync(Id);
             context.Clanovi.Remove(clan);
             context.SaveChanges();
@@ -197,6 +208,7 @@ namespace OSI.Controllers
         [HttpGet("/uredi-knjigu/{Id}")]
         public async Task<IActionResult> UrediKnjigu(int Id)
         {
+            ViewBag.Kontrol = "11";
             ViewBag.Uredjaj = deviceTypeTelem;
             Knjige knjiga = await context.Knjige.FindAsync(Id);
             ViewBag.KnjigaTransfer = knjiga;
@@ -205,6 +217,7 @@ namespace OSI.Controllers
         [HttpPost("/uredic")]
         public ActionResult UrediC(Clanovi clan)
         {
+            ViewBag.Kontrol = "12";
             try
             {
                 List<string> knjigeUID = new List<string>();
@@ -248,6 +261,7 @@ namespace OSI.Controllers
         [HttpPost("/uredik")]
         public ActionResult UrediK(Knjige knjiga)
         {
+            ViewBag.Kontrol = "14";
             Knjige knjigaToEdit = knjiga;
             DateTime lokalnoVreme = DateTime.Now;
             TimeZoneInfo cestZona = TimeZoneInfo.FindSystemTimeZoneById("Central European Standard Time");

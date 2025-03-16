@@ -45,7 +45,6 @@ public partial class OSIContext : DbContext
                 .HasColumnName("Id");
             entity.Property(e => e.DatumRodjenja).HasColumnName("datum_rodjenja");
             entity.Property(e => e.Evidencija)
-                .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("evidencija");
             entity.Property(e => e.Ime)
@@ -75,7 +74,7 @@ public partial class OSIContext : DbContext
             entity.Property(e => e.ImeKnjige)
                 .HasMaxLength(250)
                 .IsUnicode(true)
-                .HasColumnName("ime_knjige");
+                .HasColumnName("naslov");
             entity.Property(e => e.Isbn)
                 .HasMaxLength(50)
                 .IsUnicode(true)

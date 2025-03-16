@@ -1,6 +1,7 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
+@ViewData["Članske karte"]
 @using Barcoder;
 @using Barcoder.Pdf417;
 @using Barcoder.Renderer.Svg;
@@ -13,11 +14,23 @@
     {
         Layout = "_Layout";
     }
-
+    var k = "ić";
 
     Clanovi[] clanoviViewArray = ViewBag.ClanoviTransport;
-    List<Clanovi> correctedArray = new List<Clanovi>();
-    foreach (Clanovi clan in clanoviViewArray)
+    List<Clanovi> correctedArray = clanoviViewArray.Select((e) =>
+    {
+        switch (e.Prezime)
+        {
+            case var a when e.Prezime.EndsWith("ic"):
+                string l = e.Prezime.Remove(e.Prezime.Length - 2, 2);
+                e.Prezime = l+=k;
+                return e;
+            default:
+                return e;
+        }
+
+    }).ToList();
+    /*foreach (Clanovi clan in clanoviViewArray)
     {
         if (clan.Prezime.EndsWith("ic"))
         {
@@ -26,7 +39,7 @@
             Console.WriteLine(clan.Prezime);
             correctedArray.Add(clan);
         }
-    }
+    }*/
 }
 <header>
     <nav style="background-image: none;" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-white border-bottom box-shadow mb-3">

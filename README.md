@@ -17,7 +17,7 @@ OSI-202503 obuhvata sledeće podsisteme:
 ## Verzije
 
 - **Najnovija verzija (legacy)**: `v1.0.5-legacy` (Ferox grana) - Ova verzija je bazirana na starom kodnom osnovu. Sadrži ispravke grešaka i stabilizaciju funkcionalnosti.
-- **Sledeća verzija**: `202503` (Kodna oznaka u razvoju) - Nova razvojna grana koja ima za cilj ispravljanje nedostataka prve grane i implementaciju paradigme funkcionalnog programiranja radi poboljšanja kvaliteta koda i performansi sistema.
+- `Radan` (Kodna oznaka u razvoju) - Nova razvojna grana koja ima za cilj ispravljanje nedostataka prve grane i implementaciju paradigme funkcionalnog programiranja radi poboljšanja kvaliteta koda i performansi sistema.
 
 ## Licenca
 

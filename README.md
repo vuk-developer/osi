@@ -1,5 +1,5 @@
 # April 19. 2025.
-Legacy verzija ima osnovnu funkcionalnost, iako je kodna baza veoma inferiorna. `Radan` kodna oznaka koja je bila u razvoju do marta 2025. nikada do kraja nije bila završena, unapređeni su brojni podsistemi, međutim u izvornom kodu nikada nisu bili diferencirani. Projekat OSI se na datum 19. april 2025. smatra arhiviranim i objavljenim za javnost. 
+Legacy verzija ima osnovnu funkcionalnost, iako je kodna baza veoma inferiorna. `Radan` kodna oznaka koja je bila u razvoju do marta 2025. nikada do kraja nije bila završena, unapređeni su brojni podsistemi, međutim u izvornom kodu nikada nisu bili diferencirani. **Projekat OSI se od 19. aprila 2025. smatra arhiviranim i objavljenim za javnost.**
 
 ![logo](https://github.com/vukintoshalpha/OSI/blob/master/OSI/wwwroot/resources/logo-full-demo.svg?raw=true)
 # Objedinjena Serverska Infrastruktura

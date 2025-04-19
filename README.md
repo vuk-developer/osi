@@ -1,5 +1,5 @@
 # April 19. 2025.
-Legacy verzija ima osnovnu funkcionalnost, iako je kodna baza veoma inferiorna. `Radan` kodna oznaka koja je bila u razvoju do marta 2025. nikada do kraja nije bila završena, unapređeni su brojni podsistemi, međutim u izvornom kodu nikada nisu bili diferencirani. 
+Legacy verzija ima osnovnu funkcionalnost, iako je kodna baza veoma inferiorna. `Radan` kodna oznaka koja je bila u razvoju do marta 2025. nikada do kraja nije završena, unapređeni su brojni podsistemi, međutim u izvornom kodu nikada nisu bili odvojeni. 
 
 **Projekat OSI se od 19. aprila 2025. smatra arhiviranim i objavljenim za javnost.**
 
